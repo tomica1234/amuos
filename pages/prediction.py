@@ -44,9 +44,8 @@ if st.button('提出'):
     # ここでカーナンバー、レース選択、並び替えられた順位などの情報を取得します
     # 実際のspreadsheetへの書き込み処理をここに追加します
     
-    
-    scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
-    creds = Credentials.from_service_account_info(service_account_info)
+    scopes = ['https://www.googleapis.com/auth/spreadsheets','https://www.googleapis.com/auth/drive']
+    creds = Credentials.from_service_account_info(service_account_info,scopes=scopes)
     client = gspread.authorize(creds)
     
     spreadsheet = client.open('F1順位予想企画2024')
