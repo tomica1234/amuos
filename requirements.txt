@@ -1,6 +1,6 @@
 streamlit
 streamlit_sortables
 gspread
-google.oauth2.service_account
+google-auth
 pandas
 gspread_dataframe
