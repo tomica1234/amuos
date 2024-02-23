@@ -1,2 +1,6 @@
 streamlit
 streamlit_sortables
+gspread
+oauth2client.service_account
+pandas
+gspread_dataframe
