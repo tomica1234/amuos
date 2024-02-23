@@ -13,7 +13,7 @@ service_account_info = st.secrets["google_service_account"]
 
 # 認証情報を設定
 scopes = ['https://www.googleapis.com/auth/spreadsheets','https://www.googleapis.com/auth/drive']
-cred = Credentials.from_service_account_info(service_account_info,scopes=scopes)
+creds = Credentials.from_service_account_info(service_account_info,scopes=scopes)
 client = gspread.authorize(creds)
 
 st.subheader('アムオスF1順位予想2024')
