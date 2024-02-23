@@ -9,7 +9,7 @@ from gspread_dataframe import get_as_dataframe, set_with_dataframe
 service_account_info = st.secrets["google_service_account"]
 
 # 認証情報オブジェクトを生成
-creds = Credentials.from_service_account_info(service_account_info)
+
 
 # 認証情報を設定
 scopes = ['https://www.googleapis.com/auth/spreadsheets','https://www.googleapis.com/auth/drive']
