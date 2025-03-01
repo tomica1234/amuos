@@ -16,7 +16,7 @@ scopes = ['https://www.googleapis.com/auth/spreadsheets','https://www.googleapis
 creds = Credentials.from_service_account_info(service_account_info,scopes=scopes)
 client = gspread.authorize(creds)
 
-st.subheader('アムオスF1順位予想2024')
+st.subheader('アムオスF1順位予想2025')
 
 spreadsheet = client.open('F1順位予想企画2024')
 
@@ -27,7 +27,7 @@ data1 = sheet1.get_all_values()
 headers = data1.pop(0)
 df1 = pd.DataFrame(data1)
 
-sheet2 = client.open('F1順位予想企画2024').worksheet("エントリークラスⅡ")
+sheet2 = client.open('F1順位予想企画2025').worksheet("エントリークラスⅡ")
 
 data2 = sheet2.get_all_values()
 headers = data2.pop(0)
@@ -53,7 +53,7 @@ st.write(f'参加者名:{name}')
 
 race_selection = st.selectbox(
     'レースを選択してください',
-    ['バーレーン', 'サウジアラビア', 'オーストラリア','鈴鹿','中国','マイアミ','エミリアロマーニャ','モナコ','カナダ','スペイン','オーストリア','イギリス','ハンガリー','ベルギー','オランダ','モンツァ','アゼルバイジャン','シンガポール','COTA','メキシコ','サンパウロ','ラスベガス','カタール','アブダビ'])
+    ['オーストラリア', '中国', '鈴鹿','バーレーン','サウジアラビア','マイアミ','エミリアロマーニャ','モナコ','スペイン','カナダ','オーストリア','イギリス','ベルギー','ハンガリー','オランダ','モンツァ','アゼルバイジャン','シンガポール','COTA','メキシコ','サンパウロ','ラスベガス','カタール','アブダビ'])
 
 if st.button('確定'):
     
