@@ -6,7 +6,7 @@ import gspread
 
 service_account_info = st.secrets["google_service_account"]
 
-st.subheader('アムオスF1順位予想2024')
+st.subheader('アムオスF1順位予想2025')
 
 #if 'car_number' in st.session_state:
 if st.session_state['name'] == 'このカーナンバーは申請されていません。公式SNSのDMにて参加申請をしてください。':
@@ -44,7 +44,7 @@ else:
         creds = Credentials.from_service_account_info(service_account_info,scopes=scopes)
         client = gspread.authorize(creds)
 
-        spreadsheet = client.open('F1順位予想企画2024')
+        spreadsheet = client.open('F1順位予想企画2025')
         worksheet = spreadsheet.worksheet('参加者予想')
 
         fixed_order = [1, 30, 12, 63, 16, 44, 4, 81, 14, 18, 10, 7, 23, 55, 22, 6, 27, 5, 31, 87]
