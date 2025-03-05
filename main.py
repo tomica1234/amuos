@@ -18,10 +18,10 @@ client = gspread.authorize(creds)
 
 st.subheader('アムオスF1順位予想2025')
 
-spreadsheet = client.open('F1順位予想企画2024')
+spreadsheet = client.open('F1順位予想企画2025')
 
 # 最初のワークシートを選択
-sheet1 = client.open('F1順位予想企画2024').worksheet("エントリークラスⅠ")
+sheet1 = client.open('F1順位予想企画2025').worksheet("エントリークラスⅠ")
 
 data1 = sheet1.get_all_values()
 headers = data1.pop(0)
