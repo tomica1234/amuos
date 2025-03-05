@@ -27,14 +27,8 @@ data1 = sheet1.get_all_values()
 headers = data1.pop(0)
 df1 = pd.DataFrame(data1)
 
-sheet2 = client.open('F1順位予想企画2025').worksheet("エントリークラスⅡ")
-
-data2 = sheet2.get_all_values()
-headers = data2.pop(0)
-df2 = pd.DataFrame(data2)
-
 car_number = st.number_input('あなたのカーナンバーを半角で入力してください', min_value=0, max_value=200, step=1)
-class_number =  st.selectbox('あなたのクラスを選択してください',('クラスⅠ', 'クラスⅡ'))
+class_number =  st.selectbox('あなたのクラスを選択してください',('クラスⅠ'))
 
 if class_number == 'クラスⅠ':
     if (df1.loc[: ,1] == str(int(car_number))).any():
@@ -42,14 +36,6 @@ if class_number == 'クラスⅠ':
         name = filtered_rows[2].iloc[0]
     else:
         name = 'このカーナンバーは申請されていません。公式SNSのDMにて参加申請をしてください。'
-
-elif class_number == 'クラスⅡ':
-    if (df2.loc[: ,1] == str(int(car_number))).any():
-        filtered_rows = df2[df2.loc[: ,1] == str(int(car_number))]
-        name = filtered_rows[2].iloc[0]
-    else:
-        name = 'このカーナンバーは申請されていません。公式SNSのDMにて参加申請をしてください。'
-st.write(f'参加者名:{name}')
 
 race_selection = st.selectbox(
     'レースを選択してください',
